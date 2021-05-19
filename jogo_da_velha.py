@@ -43,7 +43,7 @@ difiMinMax = 0
 
 def escolhaDificuldade():
     dificuldade = -1
-    while not (dificuldade == 0 or dificuldade == 1 or dificuldade == 2 ):
+    while not (dificuldade == 2 or dificuldade == 5 or dificuldade == 10 ):
         print('Escolha a dificuldade colocando 1 pra facil, 2 pra médio e 3 pra dificil')
         escolha = input('')
 
@@ -224,7 +224,7 @@ def pegaMovimentoComp(tabuleiro, vez, compLetra, dificuldade):
 
   for movimento in possiveisOp:
     fazMovimento(tabuleiro, compLetra, movimento)
-    val = minMaxAlphaBeta(tabuleiro, compLetra, jogadorLetra,  difiMinMax, difiMinMax)
+    val = minMaxAlphaBeta(tabuleiro, compLetra, jogadorLetra,  (difiMinMax * -1), difiMinMax)
     fazMovimento(tabuleiro, '', movimento)
 
     if val > a:
